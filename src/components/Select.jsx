@@ -14,12 +14,17 @@ import year from "../assets/images/toggle-ye.svg"
 const Select = () => {
 
     const {toggleOn,toggle} = useContext(userContext);
-    const [selectedPlan,setSelectedPlan] = useState(null);
+    const [selectedPlan,setSelectedPlan] = useState([]);
+
     const navigate = useNavigate();
 
     const handleSelect = (plan) =>{
         setSelectedPlan(plan)
-        navigate.push(`/finish?plan=${plan}&billingCycle=${toggle ? "monthly" : "yearly"}`)
+        
+    }
+
+    const handleNext = () => {
+        navigate(`/add?selectedPlan=${selectedPlan}&billingCycle=${toggle ? "monthly" : "yearly"}`)
     }
 
     return (
@@ -168,12 +173,10 @@ const Select = () => {
                                 <h4 >GO BACK</h4>
                             </Link>
                         </div>
-                        <div>
-                            <Link to={`/add?plan=${selectedPlan}&billinCycle=${billingCycle}&addons=${selectedPlan.join(',')}`}>
-                                <button >
-                                    Next Step
-                                </button>
-                            </Link>
+                        <div>                          
+                            <button onClick={()=>handleNext(selectedPlan)}>
+                                Next Step
+                            </button>                         
                         </div>
                     </div>
 

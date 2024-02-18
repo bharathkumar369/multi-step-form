@@ -1,21 +1,29 @@
 import React from "react";
 import "./home.css"
 import sidepic from "../assets/images/bg-sidebar-desktop.svg"
-import { Link, useNavigate } from "react-router-dom";
+import { Link,useNavigate,useLocation } from "react-router-dom";
 
 
 const Add = () => {
 
     const [selectAdd,setSelectAdd] = React.useState([]);
-    const navigate = useNavigate;
+
+    const navigate = useNavigate();
+
+    const location = useLocation();
+    const params = new URLSearchParams(location.search)
+
+    const selectedPlan = params.get("selectedPlan");
+    const billingCycle = params.get("billingCycle");
 
     const handleAdd = (addon) =>{
         if (selectAdd.includes(addon)){
             setSelectAdd(selectAdd.filter((item)=> item !==addon));
         } else{
-            setSelectAdd([...selectAdd,addon])
-            navigate.push(`/finish?addons=${selectAdd.join(',')}`)
+            setSelectAdd([...selectAdd,addon]) 
         }
+        const queryParams = selectAdd.join(",")
+        navigate(`/finish?selectedPlan=${selectedPlan}&billingCycle=${billingCycle}&addons=${queryParams}`)
     }
 
     return (
@@ -91,6 +99,7 @@ const Add = () => {
                         </section>
 
                         <section className="add--check--container">
+
                             <section className="add--checks">
                                 <div>
                                     <input

@@ -7,12 +7,13 @@ import { Link,useLocation } from "react-router-dom";
 const Finish = () => {
 
     const location = useLocation();
-    const queryParams = new URLSearchParams(location.search);
 
-    const selectedPlan = queryParams.get("plan");
-    const billingCycle = queryParams.get("billingCycle");
-    const selectedAddons = queryParams.get("addons")?.split(',');
+    const params = new URLSearchParams(location.search);
 
+    const selectedPlan = params.get("selectedPlan");
+    const billingCycle = params.get("billingCycle");
+    const addon = params.get("addon");
+    const selectAdd = params.get("selectAdd")
 
     return (
         <main className="home">
@@ -93,15 +94,16 @@ const Finish = () => {
                                 </p>
                                 <Link to="/select">
                                     <p>
-                                        hello bharath
+                                        change
                                     </p>
                                 </Link>
                             </div>
                             <div className="finish--box--right">
-                                <h5>{billingCycle}</h5>
+                                <h5>/mo</h5>
                             </div>
                             
                         </section>
+
                         <div className="line">
                             <hr/>
                         </div>
@@ -109,7 +111,7 @@ const Finish = () => {
                         <section className="finish--box">
                             <div className="finish--box--left">
                                 <p className="finish--gray" >
-                                    Online service
+                                    
                                 </p>
                             </div>
                             <div className="finish--box--right">
