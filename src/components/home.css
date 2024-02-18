@@ -1,0 +1,278 @@
+.home{
+    margin:.5vh ;
+}
+.home--container{
+    width: 70vw;
+    background-color: #fff;
+    margin: 6vh auto;
+    
+    border-radius: 7px;
+    display: flex;
+    justify-content: space-between;
+}
+.home--left{
+    width: 30%;
+}
+.sidepic{
+    width: 100%;
+    padding: .5vw;
+    
+}
+.image--container{
+    position: relative;
+}
+.image--description{
+    position: absolute;
+    top:100px;
+    left: 16vw;
+    
+}
+.home--right,
+.select--right,
+.add--right,
+.finish--right{
+    width: 60%;
+}
+.sidebar{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vw;
+    color: white;
+}
+.sidebar--box{
+    display: flex;
+    align-items: center;
+    gap: 1.2vw;
+}
+.sidebar--names p{
+    margin-bottom: 0px;
+    font-size: 1vw;
+}
+.sidebar--names h3{
+    margin-top: 0px;
+    font-size: 1vw;
+}
+.sidebar--number--container{
+    border: 1px solid white;
+    margin-left: 20px;
+    font-size: 1vw;
+    padding: 4px 10px;
+    border-radius: 50%;
+}
+.selected--number{
+    background-color: hsl(206, 94%, 87%) ;
+    color: black;
+    border: none;
+}
+.home--right,
+.select--right,
+.add--right,
+.finish--right{
+    margin-top: 5vw;
+}
+.home--right h1, .home--right p,.add--right h1,.add--right p,
+.select--right h1,.select--right p,.finish--right h1,.finish--right p {
+    font-size: 1.2vw;
+}
+.home--label{
+    font-size: 1vw;
+}
+.home--input{
+    padding: .2rem 12vw .2rem .5rem;
+    border-radius: 10px;
+    margin-top:5px;
+    margin-bottom:15px;
+}
+.home--btn--container{
+    display: flex;
+    margin-top: 5vw;
+    justify-content: space-around;
+    align-items: center;
+}
+.home--right--descrip h1,
+.select--right--descrip h1,
+.add--right--descrip h1,
+.finish--right--descrip h1{
+    margin-bottom: 0px;
+}
+.home--right--descrip p,
+.select--right--descrip p,
+.add--right--descrip p,
+.finish--right--descrip p{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.home--btn--container button{
+    padding: .7vw 1.5vw;
+    border-radius: 5px;
+    background-color: hsl(213, 96%, 18%);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid;
+}
+.home--btn--container button:hover{
+    background-color: hsl(243, 100%, 62%);
+}
+.home--btn--container h4{
+    font-size: 13px;
+    color: gray;
+    cursor: pointer;
+
+}
+.home--btn--container h4:hover{
+    color: hsl(213, 96%, 18%);;
+}
+/* -------------------------- ---------------------------------------*/
+
+
+
+/* --------------SELECT---------------------------------------------- */
+.select--container,
+.add--container,
+.finish--container{
+    width: 70vw;
+    background-color: #fff;
+    margin: 6vh auto;
+    justify-content: space-between;
+    border-radius: 7px;
+    display: flex;
+}
+.select--plan{
+    display: flex;
+    gap: 2vw;
+
+}
+.select--box--container{
+    width: 25%;
+    margin: 0px auto
+}
+.selected--box{
+    border: 2px solid rgb(204, 202, 202);
+    padding: 1vw 2vw;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1vw;
+}
+.toggle{
+    width: 2vw;
+    height: 2vw;
+    cursor: pointer;
+}
+.selected--box:hover{
+    border: 2px solid hsl(213, 96%, 18%);
+    background-color: hsl(230, 75%, 97%);
+    
+}
+
+.select--monthly{
+    display: flex;
+    gap: 10px;
+    background-color: hsl(230, 75%, 97%);
+    padding: .5vw 30%;
+    margin-right: 5vw;
+    border-radius: 10px;
+    width: 25%;
+    margin: 1vw auto;
+    margin-left: 0px;
+    font-size: 1vw;
+    align-items: center;
+}
+.color--change{
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+}
+.selected--box h4{
+    margin-bottom: 0px;
+}
+.selected--box p{
+    margin-top: 5px;
+    font-size: 1.2vw;
+    color: gray;
+    margin-left: 3px;
+}
+.select--box__year p{ 
+    margin: 0px;
+    margin-top: 1vw;
+}
+.select--box__year h6{
+    margin: 0px;
+    margin-top: .5vw;
+}
+/* .select--right h1{
+    margin-bottom:0px
+}
+.select--right p{
+    margin-top: 0px;
+} */
+.selected{
+    border: 2px solid hsl(213, 96%, 18%);
+    background-color: hsl(230, 75%, 97%);
+}
+/* --------------------------------------------- */
+
+/* ------------ADD---------------------------------------- */
+
+.add--checks{
+    display: flex;
+    flex-direction:row ;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+    margin: 0 auto;
+    margin-left: 0px;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    padding: .2vw 1vw;
+    border-radius: 10px;
+   
+}
+.add--checks h5{
+    margin-bottom: 0px;
+    
+}
+.add--checks p{
+    margin-top: 0px;
+}
+/* .add--right--descrip h1{
+    margin-bottom: 0px;
+}
+.add--right--descrip p{
+    margin-top: 0px;
+} */
+/* ------------------------------------------------------------------ */
+
+/* --------------FINISH-------------------------------------------------- */
+.finish--box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.finish--box--left{
+    width: 50%;
+}
+.finish--box--right{
+    width: 30%;
+    
+    
+}
+.line{
+    width: 90%;
+}
+.finish--plan{
+    background-color: hsl(230, 75%, 97%);
+    width: 80%;
+    padding: 0px 0px 10px 3rem;
+    margin: 0px 20px 0px -10px;
+    border-radius: 10px;
+}
+.finish--box p,.finish--box h5{
+    margin-bottom: 0px;
+}
+.finish--gray{
+    color: gray;
+}
+.finish--total{
+    color: hsl(213, 93%, 47%);
+    font-size: 1.2vw
+}
