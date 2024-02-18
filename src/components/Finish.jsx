@@ -93,7 +93,7 @@ const Finish = () => {
                                 </p>
                                 <Link to="/select">
                                     <p>
-                                        change
+                                        hello bharath
                                     </p>
                                 </Link>
                             </div>
