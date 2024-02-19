@@ -24,7 +24,7 @@ const Select = () => {
     }
 
     const handleNext = () => {
-        navigate(`/add?selectedPlan=${selectedPlan}&billingCycle=${toggle ? "monthly" : "yearly"}`)
+        navigate(`/add?selectedPlan=${selectedPlan}&billingCycle=${toggle ? "mo" : "year"}`)
     }
 
     return (

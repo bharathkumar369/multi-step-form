@@ -1,10 +1,13 @@
 
-import React from "react";
+import React,{ useContext } from "react";
+import { userContext } from "../MultiStep";
 import "./home.css"
 import sidepic from "../assets/images/bg-sidebar-desktop.svg"
 import { Link,useLocation } from "react-router-dom";
 
 const Finish = () => {
+
+    const { toggle } = useContext(userContext);
 
     const location = useLocation();
 
@@ -12,9 +15,32 @@ const Finish = () => {
 
     const selectedPlan = params.get("selectedPlan");
     const billingCycle = params.get("billingCycle");
-    const addon = params.get("addon");
+    const addon = params.get("addons");
     const selectAdd = params.get("selectAdd")
 
+    const [totalPrice,setTotalPrice] = React.useState(0);
+
+    React.useEffect(()=>{
+        let price = 0;
+
+        if(selectedPlan === "arcade" && toggle ){
+            price += 9;
+        }else if(selectedPlan === "arcade" && !toggle){
+            price += 90
+        }
+        if(selectedPlan === "advanced"  && toggle){
+            price += 12;
+        }else if(selectedPlan === "advanced" && !toggle){
+            price += 120
+        }
+        
+        if(selectedPlan === "pro" && toggle){
+            price += 15;
+        } else if (selectedPlan === "pro" && !toggle){
+            price += 150;
+        }
+        setTotalPrice(price);
+    },[selectedPlan])
     return (
         <main className="home">
             <div className="finish--container">
@@ -90,7 +116,7 @@ const Finish = () => {
                         <section className="finish--box">
                             <div className="finish--box--left">
                                 <p>
-                                    {selectedPlan}
+                                    {selectedPlan.toUpperCase()}                         
                                 </p>
                                 <Link to="/select">
                                     <p>
@@ -99,7 +125,7 @@ const Finish = () => {
                                 </Link>
                             </div>
                             <div className="finish--box--right">
-                                <h5>/mo</h5>
+                                <h5>${totalPrice}/{billingCycle}</h5>
                             </div>
                             
                         </section>
@@ -109,17 +135,19 @@ const Finish = () => {
                         </div>
 
                         <section className="finish--box">
+                            
                             <div className="finish--box--left">
-                                <p className="finish--gray" >
+                                {/* <p className="finish--gray" >
                                     
-                                </p>
+                                </p> */}
+                                
                             </div>
                             <div className="finish--box--right">
-                                <p>$1/mo</p>
+                                <p></p>
                             </div>
                         </section>
 
-                        <section className="finish--box">
+                        {/* <section className="finish--box">
                             <div className="finish--box--left">
                                 <p className="finish--gray">
                                     Larger storage
@@ -128,7 +156,9 @@ const Finish = () => {
                             <div className="finish--box--right">
                                 <p>$2/mo</p>
                             </div>
-                        </section>
+                        </section> */}
+
+                        
 
                         <section className="finish--box">
                             <div className="finish--box--left">

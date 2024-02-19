@@ -22,6 +22,9 @@ const Add = () => {
         } else{
             setSelectAdd([...selectAdd,addon]) 
         }
+    }
+
+    const handleNext = () => {
         const queryParams = selectAdd.join(",")
         navigate(`/finish?selectedPlan=${selectedPlan}&billingCycle=${billingCycle}&addons=${queryParams}`)
     }
@@ -93,6 +96,7 @@ const Add = () => {
                 <section className="add--right">
 
                     <section>
+                        
                         <section className="add--right--descrip">
                             <h1>Pick add-ons</h1>
                             <p>Add-ons help enhance your gaming experience</p>
@@ -171,11 +175,9 @@ const Add = () => {
                             </Link>
                         </div>
                         <div>
-                            <Link to="/finish">
-                                <button >
-                                    Next Step
-                                </button>
-                            </Link>
+                            <button onClick={handleNext}>
+                                Next Step
+                            </button>
                         </div>
                     </div>
 
