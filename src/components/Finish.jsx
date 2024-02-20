@@ -18,11 +18,17 @@ const Finish = () => {
     const addon = params.get("addons");
     const selectAdd = params.get("selectAdd")
 
+    const addonList = addon ? addon.split(",") : [];
+
     const [totalPrice,setTotalPrice] = React.useState(0);
+    const [extraPrice,setExtraPrice] = React.useState(0)
 
     React.useEffect(()=>{
+        console.log(selectedPlan);
+        console.log(toggle);
+        console.log(addon);
         let price = 0;
-
+        let extra = 0;
         if(selectedPlan === "arcade" && toggle ){
             price += 9;
         }else if(selectedPlan === "arcade" && !toggle){
@@ -39,8 +45,22 @@ const Finish = () => {
         } else if (selectedPlan === "pro" && !toggle){
             price += 150;
         }
+
+        if(addon === "online" || addon === "profile" && toggle){
+            extra +=2
+        } else if(addon === "online" || addon === "profile" && !toggle){
+            extra += 20
+        }
+        if(addon === "larger" && toggle){
+            extra += 1
+        } else if(addon === "larger" && !toggle){
+            extra += 10
+        }
         setTotalPrice(price);
-    },[selectedPlan])
+        setExtraPrice(extra)
+    },[selectedPlan,selectAdd])
+
+
     return (
         <main className="home">
             <div className="finish--container">
@@ -140,10 +160,16 @@ const Finish = () => {
                                 {/* <p className="finish--gray" >
                                     
                                 </p> */}
-                                
+                                {addonList.map((addon,index)=> (
+                                    <div>
+                                        <p key={index}>
+                                            {addon}
+                                        </p>
+                                    </div>
+                                ))}
                             </div>
                             <div className="finish--box--right">
-                                <p></p>
+                                <p>{extraPrice}</p>
                             </div>
                         </section>
 
