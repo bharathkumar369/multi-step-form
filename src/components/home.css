@@ -256,6 +256,9 @@
     
     
 }
+.finish--box--right h5{
+    font-size: 1.2vw;
+}
 .line{
     width: 90%;
 }

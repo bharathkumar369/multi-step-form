@@ -22,7 +22,8 @@ const Finish = () => {
 
     const [totalPrice,setTotalPrice] = React.useState(0);
     const [extraPrice,setExtraPrice] = React.useState(0)
-
+    
+   
     React.useEffect(()=>{
         console.log(selectedPlan);
         console.log(toggle);
@@ -46,21 +47,33 @@ const Finish = () => {
             price += 150;
         }
 
-        if(addon === "online" || addon === "profile" && toggle){
-            extra +=2
-        } else if(addon === "online" || addon === "profile" && !toggle){
-            extra += 20
+        // if(addon === "online" || addon === "profile" && toggle){
+        //     extra +=2
+        // } else if(addon === "online" || addon === "profile" && !toggle){
+        //     extra += 20
+        // }
+        // if(addon === "larger" && toggle){
+        //     extra += 1
+        // } else if(addon === "larger" && !toggle){
+        //     extra += 10
+        // }
+
+        if(addonList.includes("online")){
+            extra += toggle ? 2: 20;
         }
-        if(addon === "larger" && toggle){
-            extra += 1
-        } else if(addon === "larger" && !toggle){
-            extra += 10
+        if(addonList.includes("profile")){
+            extra += toggle ? 2:20;
         }
-        setTotalPrice(price);
+        if (addonList.includes("larger")){
+            extra += toggle ?1 : 10;
+        }
+
         setExtraPrice(extra)
-    },[selectedPlan,selectAdd])
+        setTotalPrice(price);
+        
+    },[selectedPlan,toggle,addonList])
 
-
+    const finalPrice = extraPrice + totalPrice
     return (
         <main className="home">
             <div className="finish--container">
@@ -169,7 +182,7 @@ const Finish = () => {
                                 ))}
                             </div>
                             <div className="finish--box--right">
-                                <p>{extraPrice}</p>
+                               <p>${extraPrice}/{billingCycle}</p>
                             </div>
                         </section>
 
@@ -193,7 +206,7 @@ const Finish = () => {
                                 </p>
                             </div>
                             <div className="finish--box--right">
-                                <h5 className="finish--total">$12/mo</h5>
+                                <h5 className="finish--total">${finalPrice}/mo</h5>
                             </div>
                         </section>
                     </section>
