@@ -148,7 +148,7 @@ const Finish = () => {
 
                         <section className="finish--box">
                             <div className="finish--box--left">
-                                <p>
+                                <p className="finish--box--p">
                                     {selectedPlan.toUpperCase()}                         
                                 </p>
                                 <Link to="/select">
@@ -182,7 +182,7 @@ const Finish = () => {
                                 ))}
                             </div>
                             <div className="finish--box--right">
-                               <p>${extraPrice}/{billingCycle}</p>
+                               <p>+${extraPrice}/{billingCycle}</p>
                             </div>
                         </section>
 
@@ -206,17 +206,13 @@ const Finish = () => {
                                 </p>
                             </div>
                             <div className="finish--box--right">
-                                <h5 className="finish--total">${finalPrice}/mo</h5>
+                                <h5 className="finish--total">${finalPrice}/{billingCycle}</h5>
                             </div>
                         </section>
                     </section>
 
                     <div className="home--btn--container ">
-                        <div>
-                            <Link to="/add">
-                                <h4 >GO BACK</h4>
-                            </Link>
-                        </div>
+                        <div></div>
                         <div>
                             <Link>
                                 <button >

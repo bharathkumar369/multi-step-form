@@ -248,6 +248,10 @@
     align-items: center;
     justify-content: space-between;
 }
+.finish--box--p{
+    font-weight: 500;
+    font-size: 1.2vw;
+}
 .finish--box--left{
     width: 50%;
 }
@@ -278,4 +282,28 @@
 .finish--total{
     color: hsl(213, 93%, 47%);
     font-size: 1.2vw
+}
+
+/* ------------responsive------------------ */
+
+@media (max-width:600px) {
+    .home{
+        margin: 0;
+    }
+    .select--container,
+    .add--container,
+    .finish--container,
+    .home--container{
+        margin: 0;
+        flex-direction: column;
+        width: 100%;
+        height: 98vh;
+    }
+    .select--container{
+        display: flex;
+    }
+
+    .sidebar--names{
+        display: none;
+    }
 }
