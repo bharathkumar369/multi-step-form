@@ -8,7 +8,7 @@ import advanced from "../assets/images/icon-advanced.svg"
 import pro from "../assets/images/icon-pro.svg"
 import month from '../assets/images/toggle-mo.svg'
 import year from "../assets/images/toggle-ye.svg"
-
+import SectionLeft from "./SectionLeft";
 
 
 const Select = () => {
@@ -30,66 +30,7 @@ const Select = () => {
     return (
         <main className="home">
             <div className="select--container"> 
-                <section className="home--left">
-                    <div>      
-                        <div className="image--container">
-                            <img src={sidepic} alt="sidepic" className="sidepic"/>
-                        </div>
-                        <div className="image--description">
-                            <div className="sidebar">
-                
-                                <section className="sidebar--box">
-                                    <div className="sidebar--number--container ">1</div>
-                                    <div className="sidebar--names">
-                                        <div>
-                                            <p>step 1</p>
-                                        </div>
-                                        <div>
-                                            <h3>STEP INFO</h3>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section className="sidebar--box">
-                                    <div className="sidebar--number--container selected--number">2</div>
-                                    <div className="sidebar--names">
-                                        <div>
-                                            <p>step 2</p>
-                                        </div>
-                                        <div>
-                                            <h3>SELECT PLAN</h3>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section className="sidebar--box">
-                                    <div className="sidebar--number--container">3</div>
-                                    <div className="sidebar--names">
-                                        <div>
-                                            <p>step 3</p>
-                                        </div>
-                                        <div>
-                                            <h3>ADD-ONS</h3>
-                                        </div>
-                                    </div>
-                                </section>
-
-                                <section className="sidebar--box">
-                                    <div className="sidebar--number--container">4</div>
-                                    <div className="sidebar--names">
-                                        <div>
-                                            <p>step 4</p>
-                                        </div>
-                                        <div>
-                                            <h3>FINISHING UP</h3>
-                                        </div>
-                                    </div>
-                                </section>
-
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <SectionLeft/>
 
                 <section className="select--right">
                     <section className="home--right--descrip"> 
